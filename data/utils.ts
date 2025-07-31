@@ -1,4 +1,4 @@
-import { Hash, Palette, FileText, ImageIcon, Code, Calculator, Clock, QrCode, Scissors, User } from "lucide-react"
+import { Hash, Palette, FileText, ImageIcon, Code, Calculator, Clock, QrCode, Scissors, User,Lock } from "lucide-react"
 import { LucideProps } from "lucide-react"
 export interface Utility {
   utilityId: string
@@ -45,6 +45,27 @@ export const utilities: Utility[] = [
     <p>Ideal for generating unique identifiers for sessions, database entries, distributed systems, and more.</p>
   `,
   dependencies: ["uuid"]
-}
+  },
+  {
+    utilityId: "file-encryption",
+    name: "File Encryption",
+    description: "Encrypt and decrypt files using Hatsmith",
+    category: "Security",
+    tags: ["encryption", "file", "security"],
+    icon: Lock,
+    features: [
+      "Encrypt and decrypt files using Hatsmith",
+      "Chunked AEAD stream encryption/decryption",
+      "Fast and secure",
+    ],
+    customContent: `
+      Hatsmith is a web app that provides secure local file encryption in the browser. 
+      It's fast, secure, and uses modern cryptographic algorithms with chunked AEAD stream encryption/decryption.
+      Hatsmith is a fork of Hat.sh, created by sh-dv, and other contributors.
+    `,
+    dependencies: []
+  }
 
 ]
+
+

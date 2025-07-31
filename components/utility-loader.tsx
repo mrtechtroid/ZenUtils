@@ -10,6 +10,7 @@ interface UtilLoaderProps {
 // Create a registry of all available utils
 const utilityComponents = {
   "uuid-generator": lazy(() => import("@/utils/uuid-generator/component")),
+  "file-encryption": lazy(() => import("@/utils/file-encryption/component")),
 } as const
 
 export function UtilLoader({ utilityId }: UtilLoaderProps) {
