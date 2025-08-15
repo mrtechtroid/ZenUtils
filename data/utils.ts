@@ -1,4 +1,4 @@
-import { Hash, Palette, FileText, ImageIcon, Code, Calculator, Clock, QrCode, Scissors, User,Lock } from "lucide-react"
+import { Hash, Palette, FileText, ImageIcon, Code, Calculator, Clock, QrCode, Scissors, User,Lock,ScanQrCode, Shield, Link2 } from "lucide-react"
 import { LucideProps } from "lucide-react"
 export interface Utility {
   utilityId: string
@@ -64,8 +64,117 @@ export const utilities: Utility[] = [
       Hatsmith is a fork of Hat.sh, created by sh-dv, and other contributors.
     `,
     dependencies: []
-  }
-
+  },
+  {
+  utilityId: "qr-code-generator",
+  name: "QR Code Generator",
+  description: "Generate QR codes for various data types including text, URL, vCard, and more",
+  category: "Productivity",
+  tags: ["qr", "code", "generator", "productivity"],
+  icon: QrCode, // Assume QrCode is an imported icon from an icon library like lucide-react
+  features: [
+    "Generate QR codes for URLs, text, emails, events, and more",
+    "Support for logo embedding in the center of QR codes",
+    "Live preview and QR style customization",
+    "Downloadable high-resolution PNG output",
+  ],
+  customContent: `
+    The QR Code Generator is a flexible and fast utility for generating customized QR codes directly in your browser. 
+    It supports a wide variety of data types including URLs, plain text, emails, vCards, WiFi credentials, and geolocations.
+    You can preview the QR code live, apply visual styles, and optionally embed a logo at the center of the code. 
+    Built with modern React tools, the QR Generator ensures high-quality, downloadable QR outputs with optional templates.
+  `,
+  dependencies: ["qrcode.react", "html-to-image", "file-saver"]
+},
+{
+  utilityId: "qr-scanner",
+  name: "QR Code Scanner",
+  description: "Scan QR codes using webcam, image upload, or drag & drop",
+  category: "Productivity",
+  tags: ["qr", "scanner", "camera", "upload", "dragdrop"],
+  icon: ScanQrCode, 
+  features: [
+    "Scan QR codes using real-time webcam feed",
+    "Upload or drag and drop images containing QR codes",
+    "Supports image pasting and file drop",
+    "Auto-detects QR code type: URL, email, vCard, phone, WiFi, etc.",
+    "Context-aware actions like Open URL, Call, Send Email, Copy, Map, etc.",
+    "Fully offline and secure"
+  ],
+  customContent: `
+    The QR Code Scanner allows you to easily scan QR codes directly in the browser.
+    Choose between webcam scanning, uploading a QR image, or dragging & dropping/pasting one.
+    The tool detects the type of data encoded in the QR — whether it's a URL, contact, WiFi info, email, or plain text —
+    and shows context-specific actions for each.
+    
+    Everything is processed locally, so your data never leaves your device.
+  `,
+  dependencies: [
+    "jsqr",
+    "react-dropzone",
+    "react-webcam"
+  ]
+},
+{
+  utilityId: "base64-encoder-decoder",
+  name: "Base64 Encoder/Decoder",
+  description: "Convert plain text to/from Base64 format",
+  category: "Encoding",
+  tags: ["base64", "encode", "decode", "text", "binary"],
+  icon: Shield, // Assume imported from lucide-react
+  features: [
+    "Encode plain text into Base64 format",
+    "Decode Base64 into plain text",
+    "Live, client-side conversion",
+    "Supports UTF-8 characters"
+  ],
+  customContent: `
+    Use the Base64 Tool to encode or decode data in Base64 format — a common way to safely transmit binary or text data.
+    This tool works entirely in your browser, preserving your privacy.
+  `,
+  dependencies: []
+},
+{
+  utilityId: "url-encoder-decoder",
+  name: "URL Encoder/Decoder",
+  description: "Encode or decode URL-safe strings for web compatibility",
+  category: "Encoding",
+  tags: ["url", "encode", "decode", "web", "uri"],
+  icon: Link2, // Assume imported from lucide-react
+  features: [
+    "Encode special characters for URLs",
+    "Decode percent-encoded URLs into human-readable form",
+    "Useful for web development, APIs, and redirects",
+    "Safe, client-side utility"
+  ],
+  customContent: `
+    This tool allows you to encode or decode text to be safely included in URLs.
+    Whether you’re preparing query strings, redirect parameters, or working with APIs,
+    URL encoding ensures that special characters are interpreted correctly.
+  `,
+  dependencies: []
+},
+{
+  utilityId: "jwt-encoder-decoder",
+  name: "JWT Encoder & Decoder",
+  description: "Encode and decode JSON Web Tokens with full algorithm support and signature verification.",
+  category: "Security",
+  tags: ["jwt", "token", "decode", "encode", "security", "authentication"],
+  icon: Shield, 
+  features: [
+    "Switch between Encode and Decode modes",
+    "Live JWT validation and decoding",
+    "Supports HS256, HS384, HS512",
+    "Signature verification",
+    "JSON and table view for payload and header",
+    "Copy and clear actions",
+    "Example token generator"
+  ],
+  customContent: "This tool allows you to securely test, debug, and inspect JWTs in both development and production environments.",
+  dependencies: [
+    "jsonwebtoken",
+  ]
+}
 ]
 
 

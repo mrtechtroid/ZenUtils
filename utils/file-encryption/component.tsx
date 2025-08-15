@@ -9,11 +9,11 @@ export default function FileEncryption() {
             <iframe 
                 className="w-full border-0 rounded-lg"
                 style={{height:"80vh"}}
-                src="http://hatsmith.vercel.app/headless">
+                src="https://hatsmith.vercel.app/headless">
             </iframe>
             <div className="flex justify-center">
             <Button variant="outline" className="mt-4">
-                <a href="http://hatsmith.vercel.app/" target="_blank" rel="noopener">
+                <a href="https://hatsmith.vercel.app/" target="_blank" rel="noopener">
                     Open Hatsmith in a new tab
                 </a>
             </Button>

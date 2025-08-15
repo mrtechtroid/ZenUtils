@@ -11,6 +11,11 @@ interface UtilLoaderProps {
 const utilityComponents = {
   "uuid-generator": lazy(() => import("@/utils/uuid-generator/component")),
   "file-encryption": lazy(() => import("@/utils/file-encryption/component")),
+  "qr-code-generator": lazy(() => import("@/utils/qr-code-generator/component")),
+  "qr-scanner": lazy(() => import("@/utils/qr-scanner/component")),
+  "base64-encoder-decoder": lazy(() => import("@/utils/base64-encoder-decoder/component")),
+  "url-encoder-decoder": lazy(() => import("@/utils/url-encoder-decoder/component")),
+  "jwt-encoder-decoder": lazy(() => import("@/utils/jwt-encoder-decoder/component")),  
 } as const
 
 export function UtilLoader({ utilityId }: UtilLoaderProps) {
